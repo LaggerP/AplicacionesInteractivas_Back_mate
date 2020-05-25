@@ -11,6 +11,9 @@ module.exports = {
       jugador_id: {
         type: Sequelize.INTEGER
       },
+      puntaje: {
+        type: Sequelize.INTEGER
+      },
       status: {
         type: Sequelize.CHAR
       },

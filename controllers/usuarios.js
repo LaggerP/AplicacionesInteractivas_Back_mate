@@ -18,11 +18,7 @@ module.exports = {
 			.catch(error => res.status(400).send(error))
 	},
 	find(req, res) {
-		return usuarios.findOne({
-			where: {
-				username: req.body.username,
-			}
-		})
+		return usuarios.findOne( { where: {id: req.body.id,} })
 			.then(usuarios => res.status(200).send(usuarios))
 			.catch(error => res.status(400).send(error))
 	},
