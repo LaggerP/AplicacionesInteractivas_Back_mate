@@ -13,6 +13,7 @@ module.exports = (app) => {
 	app.post('/api/usuarios/create', usuariosController.create);
 	app.get('/api/usuarios/list', usuariosController.list);
 	app.get('/api/usuarios/find', usuariosController.find);
+	app.get('/api/auth/login', usuariosController.login)
 
 	// Juegos services
 	app.post('/api/juegos/create', juegosController.create);

@@ -11,7 +11,16 @@ module.exports = {
       jugador_id: {
         type: Sequelize.INTEGER
       },
-      puntaje: {
+      puntajeTotal: {
+        type: Sequelize.INTEGER
+      },
+      puntajeBilletes: {
+        type: Sequelize.INTEGER
+      },
+      puntajeSumas: {
+        type: Sequelize.INTEGER
+      },
+      puntajeMultiplicacion: {
         type: Sequelize.INTEGER
       },
       status: {

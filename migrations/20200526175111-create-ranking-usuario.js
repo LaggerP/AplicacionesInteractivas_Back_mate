@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('participacions', {
+    return queryInterface.createTable('rankingusuarios', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -16,11 +16,11 @@ module.exports = {
           key: 'id'
         },
       },
-      juego_id: {
+      ranking_id: {
         type: Sequelize.INTEGER,
         allowNull: true,
         references: {
-          model: 'juegos',
+          model: 'rankings',
           key: 'id'
         },
       },
@@ -38,6 +38,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('participacions');
+    return queryInterface.dropTable('rankingusuarios');
   }
 };
