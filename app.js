@@ -1,12 +1,14 @@
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 // This will be our application entry. We'll setup our server here.
 const http = require('http');
 
 // Set up the express app
 const app = express();
+app.use(cors())
 
 // Log requests to the console.
 app.use(logger('dev'));

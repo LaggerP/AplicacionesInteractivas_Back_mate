@@ -22,5 +22,7 @@
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": false
-  }
+  },
+  "SECRET": "secret-key",
+  "BCRYPT_ROUNDS": 10
 }

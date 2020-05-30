@@ -10,6 +10,12 @@ module.exports = (sequelize, DataTypes) => {
 	}, {});
 	ranking.associate = function (models) {
 		// associations can be defined here
+		ranking.belongsTo(models.usuarios,
+			{
+				as: 'usuario',
+				foreignKey: 'usuario_id',
+			}
+		);
 	};
 	return ranking;
 };

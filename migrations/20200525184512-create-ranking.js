@@ -8,8 +8,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      jugador_id: {
-        type: Sequelize.INTEGER
+      usuario_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'usuarios',
+          key: 'id'
+        },
       },
       puntajeTotal: {
         type: Sequelize.INTEGER

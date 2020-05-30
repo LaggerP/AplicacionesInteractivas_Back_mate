@@ -10,10 +10,10 @@ module.exports = (app) => {
 	}));
 
 	// User services
-	app.post('/api/usuarios/create', usuariosController.create);
+	app.post('/api/auth/login', usuariosController.login)
+	app.post('/api/auth/register', usuariosController.register);
 	app.get('/api/usuarios/list', usuariosController.list);
-	app.get('/api/usuarios/find', usuariosController.find);
-	app.get('/api/auth/login', usuariosController.login)
+	app.get('/api/usuarios/find', usuariosController.findUserById);
 
 	// Juegos services
 	app.post('/api/juegos/create', juegosController.create);

@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING
 		},
 		password: {
-			allowNull: null,
-			type: DataTypes.INTEGER
+			allowNull: false,
+			type: DataTypes.STRING
 		},
 		status: {
 			allowNull: true,
@@ -27,24 +27,11 @@ module.exports = (sequelize, DataTypes) => {
 		freezeTableName: true,
 		tableName: 'usuarios',
 		classMethods: {},
-		instanceMethods: {
-			validPassword: function (password) {
-				return bcrypt.compareSync(password, this.local.password);
-			}
-		},
+		instanceMethods: {},
 	});
 	Usuarios.associate = function (models) {
 		// associations can be defined here
 	};
-
-	// Generate hash for password
-	Usuarios.beforeCreate(
-		(user, options) => {
-			return bcrypt.hash(user.password, 10)
-				.then(hash => { user.password = hash; })
-				.catch(err => { throw new Error(); });
-		} 	
-	);
 
 return Usuarios;
 };
