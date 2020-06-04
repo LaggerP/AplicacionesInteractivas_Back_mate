@@ -47,8 +47,8 @@ module.exports = {
 			.then(usuarios => res.status(200).send(usuarios))
 			.catch(error => res.status(400).send(error))
 	},
-	async findUserById(req, res) {
-		return users.findOne({ where: { id: req.body.id, } })
+	async findUserByUsername(req, res) {
+		return users.findOne({ where: { username: req.body.username } })
 			.then(usuarios => res.status(200).send(usuarios))
 			.catch(error => res.status(400).send(error))
 	},

@@ -5,7 +5,7 @@ const usuario = require('../models').usuarios;
 const juego = require('../models').juegos;
 
 module.exports = {
-	create(req, res) {
+	async create(req, res) {
 		// Usuario
 		const responseUsuario = usuario.findOne({
 			where: {
@@ -39,7 +39,7 @@ module.exports = {
 			})
 			.catch(error => res.status(400).send(error));
 	},
-	list(_, res) {
+	async list(_, res) {
 		return participacion.findAll({
 			include: [{
 				model: usuario,
@@ -53,7 +53,7 @@ module.exports = {
 			.catch(error => res.status(400).send(error))
 	},
 
-	find(req, res) {
+	async findParticipacionById(req, res) {
 		return participacion.findOne({
 			where: {
 				id: req.params.id,
