@@ -13,20 +13,24 @@ module.exports = (app) => {
 	app.post('/api/auth/login', usuariosController.login)
 	app.post('/api/auth/register', usuariosController.register);
 	app.get('/api/usuarios/list', usuariosController.list);
-	app.get('/api/usuarios/find', usuariosController.findUserById);
+	app.get('/api/usuarios/find/', usuariosController.findUserByUsername);
 
 	// Juegos services
 	app.post('/api/juegos/create', juegosController.create);
 	app.get('/api/juegos/list', juegosController.list);
-	app.get('/api/juegos/find/:id', juegosController.find);
+	app.get('/api/juegos/find', juegosController.findGameByName);
 
 	// Participacion services
 	app.post('/api/participacion/create', participacionController.create);
 	app.get('/api/participacion/list', participacionController.list);
-	app.get('/api/participacion/find', participacionController.find);
+	app.get('/api/participacion/find/:id', participacionController.findParticipacionById);
 
 	// Ranking services
-	app.post('/api/ranking/create', rankingController.create);
+	app.post('/api/ranking/create', rankingController.initialSave);
+	app.post('/api/ranking/update_total', rankingController.updateTotal);
+	app.post('/api/ranking/update_billetes', rankingController.updateBilletes);
+	app.post('/api/ranking/update_sumas', rankingController.updateSumas);
+	app.post('/api/ranking/update_multi', rankingController.updateMultiplicacion);
 	app.get('/api/ranking/list', rankingController.list);
-	app.get('/api/ranking/find', rankingController.find);
+	app.get('/api/ranking/find/:id', rankingController.findRankingByUsernameId);
 };

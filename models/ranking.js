@@ -2,10 +2,10 @@
 module.exports = (sequelize, DataTypes) => {
 	const ranking = sequelize.define('ranking', {
 		usuario_id: DataTypes.INTEGER,
-		puntajeTotal: DataTypes.INTEGER,
-		puntajeBilletes: DataTypes.INTEGER,
-		puntajeSumas: DataTypes.INTEGER,
-		puntajeMultiplicacion: DataTypes.INTEGER,
+		puntaje_total: DataTypes.INTEGER,
+		puntaje_billetes: DataTypes.INTEGER,
+		puntaje_sumas: DataTypes.INTEGER,
+		puntaje_multiplicacion: DataTypes.INTEGER,
 		status: DataTypes.CHAR
 	}, {});
 	ranking.associate = function (models) {
