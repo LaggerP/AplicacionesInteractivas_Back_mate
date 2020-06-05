@@ -18,11 +18,11 @@ module.exports = {
 			description: {
 				type: Sequelize.STRING
 			},
-			successAnswer: {
+			success_answer: {
 				allowNull: false,
 				type: Sequelize.INTEGER
 			},
-			levelPoint: {
+			level_point: {
 				allowNull: false,
 				type: Sequelize.INTEGER
 			},

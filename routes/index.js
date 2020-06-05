@@ -19,6 +19,7 @@ module.exports = (app) => {
 	app.post('/api/juegos/create', juegosController.create);
 	app.get('/api/juegos/list', juegosController.list);
 	app.get('/api/juegos/find', juegosController.findGameByName);
+	app.get('/api/juegos/find/:level', juegosController.findGameByLevel);
 
 	// Participacion services
 	app.post('/api/participacion/create', participacionController.create);
