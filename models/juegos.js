@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     description: DataTypes.STRING,
     status: DataTypes.CHAR,
-    successAnswer:DataTypes.INTEGER,
-    levelPoint:DataTypes.INTEGER
+    success_answer:DataTypes.INTEGER,
+    level_point:DataTypes.INTEGER
   }, {});
   juegos.associate = function(models) {
     // associations can be defined here

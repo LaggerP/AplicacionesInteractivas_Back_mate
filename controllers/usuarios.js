@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
 const users = require('../models').usuarios;
+const ranking = require('../controllers/ranking');
 const auth = require('../services/authServices');
 const bcrypt = require("bcrypt");
-const jwt = require('jsonwebtoken');
 const BCRYPT_ROUNDS = require('../config/config.json').BCRYPT_ROUNDS
 
 
@@ -36,7 +36,6 @@ module.exports = {
 			})
 			.then(async user => {
 				let registerToken = await auth.registerUser(user)
-
 				return res.status(200).json({ token: registerToken, message: "Succesfully Created User" })
 
 			}, (err) => res.send(err))

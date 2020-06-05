@@ -7,8 +7,8 @@ module.exports = {
 				level: req.body.level,
 				name: req.body.name,
 				description: req.body.description,
-				successAnswer:req.body.successAnswer,
-				levelPoint: req.body.levelPoint,
+				success_answer:req.body.successAnswer,
+				level_point: req.body.levelPoint,
 				status: req.body.status
 			})
 			.then(juegos => res.status(200).send(juegos))
@@ -17,13 +17,19 @@ module.exports = {
 
 	async list(_, res) {
 		return juegos.findAll({})
-			.then(juegos => res.status(200).send(juegos))
-			.catch(error => res.status(400).send(error))
+							.then(juegos => res.status(200).send(juegos))
+							.catch(error => res.status(400).send(error))
 	},
 
 	async findGameByName(req, res) {
 		return juegos.findOne({ where: {name: req.body.name} })
-			.then(juegos => res.status(200).send(juegos))
-			.catch(error => res.status(400).send(error))
+							.then(juego => res.status(200).send(juego))
+							.catch(error => res.status(400).send(error))
+	},
+
+	async findGameByLevel(req, res) {
+		return juegos.findAll({ where: {level: req.params.level} })
+							.then(juegos => res.status(200).send(juegos))
+							.catch(error => res.status(400).send(error))
 	},
 };
