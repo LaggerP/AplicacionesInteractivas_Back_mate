@@ -16,9 +16,6 @@ module.exports = {
 					key: 'id'
 				},
 			},
-			puntaje_total: {
-				type: Sequelize.INTEGER
-			},
 			puntaje_billetes: {
 				type: Sequelize.INTEGER
 			},

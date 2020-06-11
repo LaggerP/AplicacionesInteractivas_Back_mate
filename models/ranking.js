@@ -2,7 +2,6 @@
 module.exports = (sequelize, DataTypes) => {
 	const ranking = sequelize.define('ranking', {
 		usuario_id: DataTypes.INTEGER,
-		puntaje_total: DataTypes.INTEGER,
 		puntaje_billetes: DataTypes.INTEGER,
 		puntaje_sumas: DataTypes.INTEGER,
 		puntaje_multiplicacion: DataTypes.INTEGER,
