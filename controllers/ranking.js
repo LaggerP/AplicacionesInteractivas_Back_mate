@@ -2,11 +2,10 @@ const Sequelize = require('sequelize');
 const ranking = require('../models').ranking;
 
 module.exports = {
-	async initialSave (req, res) {
+	async initialRankSave (userId) {
 			return ranking
 				.create({
-					usuario_id: req.body.usuario_id,
-					puntaje_total: 0,
+					usuario_id: userId,
 					puntaje_billetes: 0,
 					puntaje_sumas: 0,
 					puntaje_multiplicacion: 0,

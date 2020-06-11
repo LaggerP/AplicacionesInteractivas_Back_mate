@@ -43,5 +43,5 @@ module.exports = {
 			throw Error("Error while Creating User")
 		}
 
-	}
+	},
 };
