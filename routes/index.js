@@ -29,10 +29,9 @@ module.exports = (app) => {
 
 	// Ranking services
 	app.post('/api/ranking/create', rankingController.initialRankSave);
-	app.post('/api/ranking/update_total', rankingController.updateTotal);
-	app.post('/api/ranking/update_billetes', rankingController.updateBilletes);
-	app.post('/api/ranking/update_sumas', rankingController.updateSumas);
-	app.post('/api/ranking/update_multi', rankingController.updateMultiplicacion);
+	app.patch('/api/ranking/update_billetes', rankingController.updateBilletes);
+	app.patch('/api/ranking/update_sumas', rankingController.updateSumas);
+	app.patch('/api/ranking/update_multi', rankingController.updateMultiplicacion);
 	app.get('/api/ranking/list', rankingController.list);
 	app.get('/api/ranking/find/:id', rankingController.findRankingByUsernameId);
 };
