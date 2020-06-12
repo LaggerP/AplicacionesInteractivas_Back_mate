@@ -40,10 +40,10 @@ module.exports = {
 			.then(async user => {
 				//analizar esta funcion. Me tira error 400 pero crea y asigna ranking de forma correcta
 				let resUser = await users.findOne({ where: { username: req.body.username }})
-				await initialRankSave(resUser.id)
+				initialRankSave(resUser.id)
 				let registerToken = await auth.registerUser(user)
 				return res.status(200).json({ token: registerToken, message: "Succesfully Created User" })
-			}).catch(error => res.status(400).send(error))
+			}).catch(error => res.status(400).json({error: error, message: "Register error"}))
 	},
 
 	verifyToken (req, res) { 

@@ -2,7 +2,8 @@ const Sequelize = require('sequelize');
 const ranking = require('../models').ranking;
 
 module.exports = {
-	async initialRankSave (userId) {
+	initialRankSave (userId) {
+		console.log(userId)
 			return ranking
 				.create({
 					usuario_id: userId,
@@ -11,11 +12,10 @@ module.exports = {
 					puntaje_multiplicacion: 0,
 					status: 1
 				})
-				.then(newRank => res.status(200).send(newRank))
-				.catch(error => res.status(400).send(error))
+				
 	},
 	
-	async updateBilletes(req, res) {
+	updateBilletes(req, res) {
 		return ranking.update(
 			{puntaje_billetes: req.body.puntaje_billetes}, 
 			{returning: true, where: {usuario_id: req.body.usuario_id}}
@@ -24,7 +24,7 @@ module.exports = {
 		.catch(error => res.status(400).send(error))
 	},
 
-	async updateSumas(req, res) {
+	updateSumas(req, res) {
 		return ranking.update(
 			{puntaje_sumas: req.body.puntaje_sumas}, 
 			{returning: true, where: {usuario_id: req.body.usuario_id}}
@@ -33,7 +33,7 @@ module.exports = {
 		.catch(error => res.status(400).send(error))
 	},
 
-	async updateMultiplicacion(req, res) {
+	updateMultiplicacion(req, res) {
 		return ranking.update(
 			{puntaje_multiplicacion: req.body.puntaje_multiplicacion}, 
 			{returning: true, where: {usuario_id: req.body.usuario_id}}
