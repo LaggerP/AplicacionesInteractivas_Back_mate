@@ -1,8 +1,7 @@
 const usuario = require('../models').usuarios
 const bcrypt = require("bcrypt");
 const jwt = require('jsonwebtoken');
-const SECRET = require('../config/config.json').SECRET
-
+const DEV_SECRET = require('../config/config').DEV_SECRET
 
 module.exports = {
 	async loginUser(user) {
@@ -17,7 +16,7 @@ module.exports = {
 			// Create token of existing user
 			let token = jwt.sign({
 				id: _details.id
-			}, SECRET, {
+			}, process.env.SECRET || DEV_SECRET, {
 				expiresIn: 86400 // expires in 24 hours
 			});
 			return token;
@@ -32,16 +31,14 @@ module.exports = {
 			// Creating token for new user
 			var token = jwt.sign({
 				id: user.id
-			}, SECRET, {
+			}, process.env.SECRET || DEV_SECRET, {
 				expiresIn: 86400 // expires in 24 hours
 			});
 			return token;
 
 		} catch (e) {
 			// return a Error message describing the reason 
-			console.log(e)
 			throw Error("Error while Creating User")
 		}
-
 	},
 };

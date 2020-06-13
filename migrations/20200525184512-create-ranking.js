@@ -8,13 +8,9 @@ module.exports = {
 				primaryKey: true,
 				type: Sequelize.INTEGER
 			},
-			usuario_id: {
-				type: Sequelize.INTEGER,
+			username: {
+				type: Sequelize.STRING,
 				allowNull: false,
-				references: {
-					model: 'usuarios',
-					key: 'id'
-				},
 			},
 			puntaje_billetes: {
 				type: Sequelize.INTEGER
