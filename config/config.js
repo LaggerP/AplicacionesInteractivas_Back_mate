@@ -25,6 +25,7 @@ module.exports = {
     host: process.env.PROD_DB_HOSTNAME,
     port: process.env.PROD_DB_PORT,
     dialect: 'mysql',
+    operatorsAliases: '0',
   },
   DEV_SECRET: 'secret-key',
   BCRYPT_ROUNDS: 10
