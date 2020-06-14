@@ -19,7 +19,7 @@ module.exports = {
     dialect: 'mysql',
   },
   production: {
-    use_env_variable: process.env.use_env_variable,
+    use_env_variable: process.env.DATABASE_URL,
     dialect: 'mysql',
     operatorsAliases: '0',
   },
