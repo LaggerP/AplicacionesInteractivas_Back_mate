@@ -19,10 +19,22 @@ module.exports = {
     dialect: 'mysql',
   },
   production: {
-    use_env_variable: process.env.DATABASE_URL,
+    //use_env_variable: process.env.DATABASE_URL,
+    username: 'admin',
+    password: "bAT-2j;T",
+    database: 'apiuadeproduction',
+    host: 'apiuadeproduction.czlcqcubu3e1.us-east-2.rds.amazonaws.com',
+    port: 3306,
     dialect: 'mysql',
     operatorsAliases: '0',
   },
   DEV_SECRET: 'secret-key',
   BCRYPT_ROUNDS: 10
 };
+
+/*
+mysql://admin:bAT-2j;T@apiuadeproduction.czlcqcubu3e1.us-east-2.rds.amazonaws.com:3306/apiuadeproduction?reconnect=true
+
+mysql://admin:bAT-2j;T@apiuadeproduction.czlcqcubu3e1.us-east-2.rds.amazonaws.com:3306/apiuadeproduction
+
+*/
