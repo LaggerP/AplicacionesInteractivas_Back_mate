@@ -1,10 +1,12 @@
 const Sequelize = require('sequelize');
-const juegos = require('../models').juegos;
+const billetesJuegos = require('../models').billetesjuegos;
+
 module.exports = {
 	async create(req, res) {
-		return juegos
+		return billetesJuegos
 			.create({
 				level: req.body.level,
+				gameType: req.body.gameType,
 				name: req.body.name,
 				description: req.body.description,
 				success_answer:req.body.successAnswer,
@@ -16,7 +18,7 @@ module.exports = {
 	},
 
 	async list(_, res) {
-		return juegos.findAll({})
+		return billetesJuegos.findAll({})
 							.then(juegos => res.status(200).send(juegos))
 							.catch(error => res.status(400).send(error))
 	},
@@ -28,7 +30,7 @@ module.exports = {
 	},
 
 	async findGameByLevel(req, res) {
-		return juegos.findAll({ where: {level: req.params.level} })
+		return billetesJuegos.findAll({ where: {level: req.params.level} })
 							.then(juegos => res.status(200).send(juegos))
 							.catch(error => res.status(400).send(error))
 	},

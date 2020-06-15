@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
 				foreignKey: 'usuario_id',
 			}
 		);
-		participacion.belongsTo(models.juegos,
+		participacion.belongsTo(models.billetesjuegos,
 			{
 				as: 'juego',
 				foreignKey: 'juego_id',
