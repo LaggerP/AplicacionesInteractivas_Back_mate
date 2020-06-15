@@ -1,15 +1,16 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const juegos = sequelize.define('juegos', {
+  const billetesjuegos = sequelize.define('billetesjuegos', {
     level: DataTypes.INTEGER,
+    gameType: DataTypes.STRING,
     name: DataTypes.STRING,
     description: DataTypes.STRING,
     status: DataTypes.CHAR,
     success_answer:DataTypes.INTEGER,
     level_point:DataTypes.INTEGER
   }, {});
-  juegos.associate = function(models) {
+  billetesjuegos.associate = function(models) {
     // associations can be defined here
   };
-  return juegos;
+  return billetesjuegos;
 };

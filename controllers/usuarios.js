@@ -2,9 +2,7 @@ const Sequelize = require('sequelize');
 const users = require('../models').usuarios;
 const auth = require('../services/authServices');
 const bcrypt = require("bcrypt");
-const jwt = require('jsonwebtoken');
 const BCRYPT_ROUNDS = require('../config/config.js').BCRYPT_ROUNDS
-const SECRET = require('../config/config.js').DEV_SECRET || process.env.SECRET
 const initialRankSave = require('../controllers/ranking').initialRankSave
 
 
@@ -45,27 +43,13 @@ module.exports = {
 			.catch(error => res.status(400).json({error: error, message: "Register error"}))
 	},
 
-	verifyToken (req, res) { 
-		let token = req.body.token;
-
-		jwt.verify(token, SECRET, { algorithm: "HS256" }, (err, user) => {
-
-			if (err) {
-				// shut them out!
-				res.status(500).json({ error: "Not Authorized" });
-				throw new Error("Not Authorized");
-			}
-			return res.status(200).send('Correct token');
-		});
-	},
-
-	list(_, res) {
+	list(_, res, next) {
 		return users.findAll({})
 			.then(usuarios => res.status(200).send(usuarios))
 			.catch(error => res.status(400).send(error))
 	},
 
-	findUserByUsername(req, res) {
+	findUserByUsername(req, res, next) {
 		return users.findOne({ where: { username: req.body.username } })
 			.then(usuarios => res.status(200).send(usuarios))
 			.catch(error => res.status(400).send(error))

@@ -43,8 +43,8 @@ module.exports = {
 			.catch(error => res.status(400).send(error))
 	},
 
-	async findRankingByUsernameId(req, res) {
-		return ranking.findOne({ where: { username_id: req.body.username_id } })
+	async findRankingByUsername(req, res) {
+		return ranking.findOne({ where: { username: req.body.username } })
 			.then(ranking => res.status(200).send(ranking))
 			.catch(error => res.status(400).send(error))
 	},

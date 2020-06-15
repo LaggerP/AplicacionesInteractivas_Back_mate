@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const participacion = require('../models').participacion;
 const usuario = require('../models').usuarios;
-const juego = require('../models').juegos;
+const juego = require('../models').billetesjuegos;
 
 module.exports = {
 	async create(req, res) {

@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
 	up: (queryInterface, Sequelize) => {
-		return queryInterface.createTable('juegos', {
+		return queryInterface.createTable('billetesjuegos', {
 			id: {
 				allowNull: false,
 				autoIncrement: true,
@@ -11,6 +11,9 @@ module.exports = {
 			level: {
 				allowNull: false,
 				type: Sequelize.INTEGER
+			},
+			gameType: {
+				type: Sequelize.STRING
 			},
 			name: {
 				type: Sequelize.STRING
@@ -40,6 +43,6 @@ module.exports = {
 		});
 	},
 	down: (queryInterface, Sequelize) => {
-		return queryInterface.dropTable('juegos');
+		return queryInterface.dropTable('billetesjuegos');
 	}
 };
