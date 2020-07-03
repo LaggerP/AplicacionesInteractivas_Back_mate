@@ -1,6 +1,7 @@
 /* Controllers */
 const usuariosController = require('../controllers/usuarios');
 const billetesJuegosController = require('../controllers/billetesjuegos');
+const multiJuegosController = require('../controllers/multiplicacionjuegos');
 const participacionController = require('../controllers/participacion');
 const rankingController = require('../controllers/ranking');
 const auth = require ('../auth/authToken.js')
@@ -20,7 +21,13 @@ module.exports = (app) => {
 	app.post('/api/billetesjuegos/create', billetesJuegosController.create);
 	app.get('/api/billetesjuegos/list', auth, billetesJuegosController.list);
 	app.get('/api/billetesjuegos/find', auth, billetesJuegosController.findGameByName);
-	app.get('/api/billetesjuegos/find/:level', auth, billetesJuegosController.findGameByLevel);
+	app.get('/api/billetesjuegos/findLevel', auth, billetesJuegosController.findGameByLevel);
+
+	// Multiplicacion juegos services
+	app.post('/api/multijuegos/create', multiJuegosController.create);
+	app.get('/api/multijuegos/list', auth, multiJuegosController.list);
+	app.get('/api/multijuegos/find', auth, multiJuegosController.findGameByName);
+	app.get('/api/multijuegos/findLevel', auth, multiJuegosController.findGameByLevel);
 
 	// Participacion services
 	app.post('/api/participacion/create', participacionController.create);
