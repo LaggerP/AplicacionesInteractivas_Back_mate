@@ -1,0 +1,36 @@
+{
+  "name": "aplicacionesinteractivas_back_mate",
+  "version": "1.0.0",
+  "description": "backend aplicaciones interactivas",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "nodemon": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaggerP/AplicacionesInteractivas_Back_mate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LaggerP/AplicacionesInteractivas_Back_mate/issues"
+  },
+  "homepage": "https://github.com/LaggerP/AplicacionesInteractivas_Back_mate#readme",
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "console-emoji": "0.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.10",
+    "sequelize-cli": "^5.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
