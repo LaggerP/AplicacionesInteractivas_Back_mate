@@ -21,3 +21,7 @@ $ npm run nodemon
 ```sh
 $ sequelize db:migrate
 ```
+
+### Multiplicacion - Juego
+
+Se debe importar el archivo tablaMultiplicacionJuegos.csv en la tabla **multiplicacionjuegos** para crear los juegos de forma mas rápida, ya que hace uso de imagenes a través de urls.
